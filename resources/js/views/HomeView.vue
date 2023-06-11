@@ -4,7 +4,7 @@
         height="48"
         flat
     >App bar</v-app-bar>
-
+    <NavBar />
     <v-main>
         <v-container>
 
@@ -13,7 +13,8 @@
 </template>
 
 <script setup>
-import {useSurveyStore} from "../store/index.js";
+import {useSurveyStore} from "../store/survey.js";
+import NavBar from "../App.vue";
 
 const store = useSurveyStore();
 

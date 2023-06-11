@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\User;
+use App\Models\Answer;
+use App\Models\Question;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,13 +13,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surveys', function (Blueprint $table) {
+        Schema::create('answer_to_questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class, 'user_id');
-            $table->string('title', 50);
-            $table->string('slug', 50);
-            $table->boolean('status')->default(true);
-            $table->text('description')->nullable();
+            $table->foreignIdFor(Question::class, 'survey_question_id');
+            $table->foreignIdFor(Answer::class, 'survey_answer_id');
+            $table->text('answer');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('surveys');
+        Schema::dropIfExists('answer_to_questions');
     }
 };
