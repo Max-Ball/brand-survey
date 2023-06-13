@@ -14,9 +14,13 @@
 
 <script setup>
 import {useSurveyStore} from "../store/survey.js";
-import NavBar from "../App.vue";
+import NavBar from "../components/NavBar.vue";
+import {onMounted} from "vue";
+import {useUserStore} from "../store/user.js";
 
-const store = useSurveyStore();
+
+const store = useUserStore();
+
 
 </script>
 
