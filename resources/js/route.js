@@ -6,6 +6,7 @@ import LoginView from "./views/LoginView.vue";
 import RegisterView from "./views/RegisterView.vue";
 import {useUserStore} from "./store/user.js";
 import {computed} from "vue";
+import AccountView from "./views/AccountView.vue";
 
 const routes = [
     {
@@ -13,6 +14,12 @@ const routes = [
         name: 'HomeView',
         meta: {requiresAuth: true},
         component: HomeView
+    },
+    {
+        path: '/account',
+        name: 'AccountView',
+        meta: {requiresAuth: true},
+        component: AccountView
     },
     {
         path: '/survey',
