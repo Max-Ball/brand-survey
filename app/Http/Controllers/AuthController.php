@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Password;
 use Throwable;
@@ -43,7 +44,7 @@ class AuthController extends Controller
         }
     }
 
-    public function login(Request $request)
+    public function login(Request $request) : Response
     {
         try {
             $credentials = $request->validate( [
@@ -61,10 +62,12 @@ class AuthController extends Controller
                 Auth::login($user);
                 $token = $user->createToken( 'auth_token' )->plainTextToken;
 
-                return response( [
+                $userData = [
                     'user'  => $user,
                     'token' => $token
-                ] );
+                ];
+
+                return Response($userData, 200);
             }
             return response( [
                 'error' => 'The Provided credentials are not correct'

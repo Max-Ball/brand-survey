@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SurveyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,10 @@ Route::controller(AuthController::class)->prefix('auth')->group(function() {
     Route::post('/register', 'register');
     Route::post('/login', 'login');
 });
+
+// TODO MOVE TO AUTHENTICATED ROUTES
+Route::controller(SurveyController::class)->prefix('surveys')->group(function () {
+    Route::get('/', 'index');
+});
+
 

@@ -1,6 +1,6 @@
 <template>
-    <v-container class="fill-height" fluid>
-        <v-row align="center" justify="center" dense>
+    <v-container class="fill-height" fluid="true">
+        <v-row align="center" justify="center" dense="true">
             <v-col cols="12" sm="8" md="4" lg="4">
                 <v-card elevation="0">
                     <a href="#" title="Logo Placeholder" target="_blank">
@@ -10,7 +10,7 @@
                         <v-form @submit.prevent="loginUser">
                             <v-text-field v-model="editable.email" label="Enter your email" name="email" prepend-inner-icon="mdi-email" type="email" class="rounded-0" outlined></v-text-field>
                             <v-text-field v-model="editable.password" label="Enter your password" name="password" prepend-inner-icon="mdi-lock" type="password" suffix="| Forgot?" class="rounded-0" outlined></v-text-field>
-                            <v-btn type="submit" class="rounded-2 py-4 font-weight-bold" color="suds-dark-blue" block>Login</v-btn>
+                            <v-btn type="submit" class="rounded-2 py-4 font-weight-bold" color="secondary-blue" block="true">Login</v-btn>
                             <v-card-actions class="text--secondary">
                                 <v-checkbox color="#000000" label="Remember me"></v-checkbox>
                             </v-card-actions>

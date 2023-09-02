@@ -14,13 +14,12 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import {createPinia} from "pinia";
 
-const sudsTheme = {
+const clientTheme = {
     dark: false,
     colors: {
-        'suds-gray': '#D8DFE1',
-        'suds-light-blue': '#45C3D2',
-        'suds-dark-blue': '#00263A',
-        'suds-white': '#FFFFFF',
+        'primary-gray': '#D8DFE1',
+        'primary-blue': '#45C3D2',
+        'secondary-blue': '#00263A',
     },
 }
 
@@ -35,9 +34,9 @@ const vuetify = createVuetify({
         },
     },
     theme: {
-        defaultTheme: 'sudsTheme',
+        defaultTheme: 'clientTheme',
         themes: {
-            sudsTheme,
+            clientTheme,
         },
     },
 })

@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <v-app class="bg-blue-grey-lighten-5">
         <v-layout>
             <RouterView />
         </v-layout>

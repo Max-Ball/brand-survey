@@ -1,16 +1,21 @@
 <template>
+    <AppBar />
     <NavBar />
-    <h1>Survey View</h1>
-    <SurveyCard />
+    <v-main>
+        <v-container>
+            Survey View
+        </v-container>
+    </v-main>
 </template>
 
 <script>
 import SurveyCard from "../components/SurveyCard.vue";
 import NavBar from "../components/NavBar.vue";
+import AppBar from "../components/AppBar.vue";
 
 export default {
     name: "SurveyView",
-    components: {NavBar, SurveyCard}
+    components: {AppBar, NavBar, SurveyCard}
 }
 </script>
 

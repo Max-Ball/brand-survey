@@ -12,7 +12,7 @@ class SurveyController extends Controller
      */
     public function index()
     {
-        //
+        return Response( Survey::all(), 200);
     }
 
     /**

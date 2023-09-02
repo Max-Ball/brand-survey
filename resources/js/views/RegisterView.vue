@@ -1,5 +1,5 @@
 <template>
-    <v-container class="fill-height" fluid>
+    <v-container class="fill-height" fluid="true">
         <v-row align="center" justify="center">
             <v-col cols="12" sm="8" md="4" lg="4">
                 <h1>{{errors}}</h1>
@@ -13,7 +13,7 @@
                             <v-text-field v-model="editable.email" label="Enter your email" name="email" prepend-inner-icon="mdi-email" type="email" class="rounded-0" outlined></v-text-field>
                             <v-text-field v-model="editable.password" label="Enter your password" name="password" prepend-inner-icon="mdi-lock" type="password" class="rounded-0" outlined></v-text-field>
                             <v-text-field v-model="editable.confirmPassword" label="Confirm your password" name="confirm-password" prepend-inner-icon="mdi-lock" type="password" class="rounded-0" outlined></v-text-field>
-                            <v-btn type="submit" class="rounded-2 py-4 font-weight-bold" color="suds-dark-blue" block>Register</v-btn>
+                            <v-btn type="submit" class="rounded-2 py-4 font-weight-bold" color="secondary-blue" block="true">Register</v-btn>
                         </v-form>
                     </v-card-text>
                 </v-card>
@@ -39,9 +39,6 @@ async function registerUser(){
         await router.push({name: 'HomeView'})
     }
     catch (error) {
-        if (error.response.status === 422) {
-            errors.value = error.response.data.errors
-        }
         console.log('error registering user', error)
     }
 }

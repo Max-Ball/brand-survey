@@ -7,6 +7,8 @@ import RegisterView from "./views/RegisterView.vue";
 import {useUserStore} from "./store/user.js";
 import {computed} from "vue";
 import AccountView from "./views/AccountView.vue";
+import CreateSurveyView from "./views/CreateSurveyView.vue";
+
 
 const routes = [
     {
@@ -24,7 +26,12 @@ const routes = [
     {
         path: '/survey',
         name: 'SurveyView',
-        component: SurveyView
+        component: SurveyView,
+    },
+    {
+        path: '/survey/new',
+        name: 'CreateSurveyView',
+        component: CreateSurveyView,
     },
     {
         path: '/auth',

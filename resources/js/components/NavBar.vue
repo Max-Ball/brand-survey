@@ -1,20 +1,15 @@
 <template>
-    <v-app-bar
-        color="grey"
-        height="48"
-        flat
-    >App bar</v-app-bar>
     <v-navigation-drawer
         v-model="drawer"
         :rail="rail"
-        permanent
+        permanent="true"
         @click="rail = false"
     >
         <v-list-item
             variant="text"
             prepend-avatar="https://randomuser.me/api/portraits/men/85.jpg"
             title="Max Ball"
-            nav
+            nav="true"
         >
             <template v-slot:append>
                 <v-btn
@@ -27,7 +22,7 @@
 
         <v-divider></v-divider>
 
-        <v-list density="compact" nav>
+        <v-list density="compact" nav="true">
             <router-link :to="{name: 'HomeView'}">
                 <v-list-item prepend-icon="mdi-home-city" title="Home" value="home"></v-list-item>
             </router-link>

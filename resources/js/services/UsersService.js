@@ -3,6 +3,7 @@ import {useUserStore} from "../store/user.js";
 class UsersService{
 
     async registerUser(newUser){
+        console.log(newUser, 'newUser')
         const res = await axios.post('http://localhost/api/auth/register', newUser)
         useUserStore().authUser.data = res.data.user
         sessionStorage.setItem('TOKEN', res.data.token)
