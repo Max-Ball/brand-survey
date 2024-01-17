@@ -2,10 +2,14 @@
     <AppLayout>
         <template #default>
             <v-row>
-                <v-col cols="6">
-                    <v-card height="80vh">
+                <v-col cols="5">
+                    <v-card>
                         <v-card-item>
-                            <component :is="currentStepComponent" :formTitle="formTitle" />
+                            <component
+                                :is="currentStepComponent"
+                                :formTitle="formTitle"
+                                @update-survey="setSurvey"
+                                />
                         </v-card-item>
                         <v-card-actions>
                             <v-btn @click="previousStep" :disabled="currentStep === 0">Previous</v-btn>
@@ -25,8 +29,10 @@ import {computed, ref} from "vue";
 import SurveyFormStep1 from "../components/SurveyFormStep1.vue";
 import SurveyFormStep2 from "../components/SurveyFormStep2.vue";
 import SurveyFormStep3 from "../components/SurveyFormStep3.vue";
+import FormLayout from "../components/FormLayout.vue";
 export default {
     components: {
+        FormLayout,
         AppLayout,
         SurveyFormStep1,
         SurveyFormStep2,
@@ -67,6 +73,10 @@ export default {
             formTitle,
             nextStep,
             previousStep,
+
+            setSurvey(survey){
+                console.log("setSurvey", survey.value);
+            }
         };
     },
 };

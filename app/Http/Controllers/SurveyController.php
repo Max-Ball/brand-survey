@@ -10,17 +10,10 @@ class SurveyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        // TODO ADD USER SPECIFIC SURVEYS BY SURVEY RESOURCE
         return Response( Survey::all(), 200);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -28,7 +21,8 @@ class SurveyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $survey = Survey::create($request);
+        return Response($survey, 201);
     }
 
     /**

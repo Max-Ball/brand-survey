@@ -135,8 +135,6 @@ const iconBackgroundColorBlue = "#ADD8E6";
 async function getSurveys() {
     try{
         await surveysService.getSurveys()
-        console.log(surveys)
-        console.log(activeSurveys)
     }
     catch (error) {
         console.error(error);

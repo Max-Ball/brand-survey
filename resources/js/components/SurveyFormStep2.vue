@@ -1,30 +1,33 @@
 <template>
     <FormLayout form-title="questions">
-        <template #form-content>
-            <BaseTextField
-                class="mb-10"
-                v-model="survey.title"
-                label="Survey Title"
-                required />
-            <BaseTextArea
-                v-model="survey.description"
-                label="Survey Description"
-                required />
+        <template #form-content="{survey}">
+            <!-- Render existing questions -->
+            <div v-for="(question, index) in survey.questions" :key="index">
+                <BaseTextField
+                    class="mb-10"
+                    v-model="question[index]"
+                    :label="`Question ${index + 1}`"
+                    required
+                />
+            </div>
+            <!-- Render the text fields -->
+
+
+            <v-btn class="bg-blue-grey mb-10 justify-center" @click="addQuestion(survey)">Add Question</v-btn>
         </template>
     </FormLayout>
 </template>
 
 <script setup>
-import { ref } from "vue";
 import BaseTextField from "./BaseTextField.vue";
-import BaseTextArea from "./BaseTextArea.vue";
 import FormLayout from "./FormLayout.vue";
 
-const survey = ref({
-    title: "",
-    description: "",
-})
+const newQuestion = []
 
+function addQuestion(survey){
+    // survey.questions.push(question)
+    console.log(survey, 'new question')
+}
 </script>
 
 <style scoped>

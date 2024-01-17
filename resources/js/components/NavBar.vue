@@ -2,14 +2,14 @@
     <v-navigation-drawer
         v-model="drawer"
         :rail="rail"
-        permanent="true"
+        :permanent=true
         @click="rail = false"
     >
         <v-list-item
             variant="text"
             prepend-avatar="https://randomuser.me/api/portraits/men/85.jpg"
             title="Max Ball"
-            nav="true"
+            :nav=true
         >
             <template v-slot:append>
                 <v-btn
@@ -22,7 +22,7 @@
 
         <v-divider></v-divider>
 
-        <v-list density="compact" nav="true">
+        <v-list density="compact" :nav=true>
             <router-link :to="{name: 'HomeView'}">
                 <v-list-item prepend-icon="mdi-home-city" title="Home" value="home"></v-list-item>
             </router-link>

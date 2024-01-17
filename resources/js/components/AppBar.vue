@@ -2,7 +2,7 @@
     <v-app-bar
         color="grey"
         height="48"
-        flat="true"
+        :flat=true
     >App bar</v-app-bar>
 </template>
 
